@@ -1,1 +1,0 @@
-# Apuntes-Control-de-Movimiento
