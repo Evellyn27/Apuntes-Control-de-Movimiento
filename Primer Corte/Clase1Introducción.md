@@ -1,4 +1,6 @@
 # Fundamentos de Control de Movimiento
+Actualmente, los sistemas de control de movimiento son fundamentales en el área de la automatización industrial, ya que permiten gestionar y coordinar el desplazamiento de cargas a través de actuadores y controladores, mejorando la precisión y la eficiencia en los procesos. Sin embargo, esto no siempre fue así, ya que antes de su implementación se dependía de sistemas de transmisión mecánica complejas que aunque eran funcionales, presentaban limitaciones en términos de flexibilidad y mantenimiento. En ese sentido, con el avance de la tecnología, estos sistemas fueron reemplazados por soluciones digitales más avanzadas, que integraban estrategias de retroalimentación donde se optimizaban el rendimiento y la adaptabilidad. 
+
 
 
 ## Indice
