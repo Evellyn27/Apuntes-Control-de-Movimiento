@@ -6,20 +6,20 @@ Actualmente, los sistemas de control de movimiento son fundamentales en el área
 ## Indice
 1. Diseño Convencional de Sistemas de Movimiento
 2. Ejes de Movimiento
-3. Principios Matemáticos y Variables Claves
+3. Variables Claves
 4. Elementos Esenciales de un Sistema de Control de Movimiento 
 5. Esquemas de Control y Aplicaciones Industriales Avanzadas
 6. Conclusiones
    
 ## 1. Diseño Convencional de Sistemas de Movimiento
+Desde sus inicios, la industria ha depositado su confianza  en los sistemas de transmisión mecánica para transferir energía y movimiento a través de mecanismos como engranajes, correas y cadenas, que permiten configurarse en innumerables aplicaciones, sin embargo, el diseño y mantenimiento del mismo plantea retos que con el tiempo han llevado a la búsqueda de opciones más sofisticadas.
 
+>🔑 *Sistema de transmisión mecánica:* Es un conjunto de elementos diseñados para transferir potencia y movimiento desde un componente motriz (como un motor) hasta un elemento receptor (como una rueda o una herramienta). 
 
->🔑 *Señal Analóga:*
-
-
-
-
-#### Comparativa entre sistema mecánico y electrónico
+### 1.1. Evolución de los Sistemas de Transmisión Mecánica
+### 1.2. Proceso de Diseño de un Sistema de Transmisión Mecánica
+### 1.3. Principales Problemas de los Sistemas Mecánicos
+### 1.4. Comparativa: Sistemas Mecánicos vs. Control de Movimiento Moderno
 
 
 ## 2. Ejes de Movimiento
@@ -30,13 +30,15 @@ Actualmente, los sistemas de control de movimiento son fundamentales en el área
 
 
 
-## 3. Principios Matemáticos y Variables Claves
+## 3. Variables Claves
+>🔑 *Variable Controlada:* se refiere a la cantidad o condición es midible y  se pretende controlar.
 
+>🔑 *Variable Manipulada:* esta variable permite condicionar a la variable controlada mediante una modificacion de la misma.
 ## 4. Elementos Esenciales de un Sistema de Control de Movimiento 
 
 ## 5. Esquemas de Control y Aplicaciones Industriales Avanzadas
 
-
+>🔑 *Perturbaciones:* se le conoce a todo aquello que afecta de manera adversa el desarrollo de un proceso.
 ## 6. Conclusiones
 
 ## Referencias
