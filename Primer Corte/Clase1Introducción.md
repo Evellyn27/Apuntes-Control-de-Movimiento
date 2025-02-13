@@ -17,7 +17,16 @@ Desde sus inicios, la industria ha depositado su confianza  en los sistemas de t
 >🔑 *Sistema de transmisión mecánica:* Es un conjunto de elementos diseñados para transferir potencia y movimiento desde un componente motriz (como un motor) hasta un elemento receptor (como una rueda o una herramienta). 
 
 ### 1.1. Evolución de los Sistemas de Transmisión Mecánica
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/e5c78494079f45b4aca660a2ef2e218f0795a500/Imagenes/Evolucion.png">
+</p>
+
 ### 1.2. Proceso de Diseño de un Sistema de Transmisión Mecánica
+El desarrollo de un sistema de transmisión mecánica es un procedimiento organizado que tiene como objetivo asegurar el desempeño, la eficacia y la protección del mecanismo. Es así que para lograrlo, se realizan una serie de fases metodológicas que van desde la detección de necesidades hasta la verificación del prototipo, garantizando que el sistema satisfaga las especificaciones técnicas y operativas.
+
+* **Definición y Requisitos:** En primera instancia, se  identifican las necesidades del sistema (velocidad, par, condiciones de carga y espacio disponible) y se establecen las especificaciones técnicas fundamentales.
+* **Conceptualización:**  Se elabora un esquema preliminar que integra los componentes esenciales (motor, ejes, engranajes y acoplamientos), permitiendo visualizar el flujo de potencia y la configuración general del sistema.
+* **Dimensionado y Análisis:** Se realizan los cálculos de diseño para determinar dimensiones y cargas en cada componente, utilizando herramientas CAD y simulaciones para validar la integridad estructural y el desempeño mecánico.
 ### 1.3. Principales Problemas de los Sistemas Mecánicos
 ### 1.4. Comparativa: Sistemas Mecánicos vs. Control de Movimiento Moderno
 
