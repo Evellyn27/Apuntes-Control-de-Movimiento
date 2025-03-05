@@ -25,10 +25,10 @@ Desde sus inicios, la industria ha depositado su confianza  en los sistemas de t
 | **Costo Inicial**          | Bajo a medio                   | Medio a alto                   |
 | **Aplicaciones**           | Transportadores, maquinaria pesada | Robótica, automatización avanzada |
 
-💡**Ejemplo 1:** En este caso se tienen dos figuras. 
+💡**Ejemplo 1:** En este caso se muestra como se comportan cada uno de los sistemas
 
 <p align="center">
-  <img src="https://motorkote.com.co/wp-content/uploads/2022/06/Sistema-de-transmisio%CC%81n-2.gif">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/4a0e2390f544039b20eead564869dbb0157ae80b/Imagenes/Captura%20de%20pantalla%202025-03-05%20122647.png">
 </p>
 
 ## Ejes de Movimiento y Componentes Clave
@@ -39,10 +39,11 @@ Los sistemas de control de movimiento operan a través de distintos **ejes de mo
 - **Ejes Rotacionales:** Utilizados en brazos robóticos y maquinaria CNC, donde se requiere giro y precisión angular.
 - **Ejes Combinados:** Sistemas con múltiples grados de libertad que permiten movimientos complejos en diferentes planos.
 
+<p align="center">
+  <img src="https://media.giphy.com/media/cnXQkaPEwri6o0RjpR/giphy.gif">
+</p>
 
-> 🔑 *Ejemplo:* En un robot cartesiano, los ejes de movimiento son X, Y y Z, permitiendo un control preciso en un espacio tridimensional.
-
-### 3. Componentes Clave de un Sistema de Control de Movimiento
+### Componentes Clave de un Sistema de Control de Movimiento
 
 Para lograr un **control de movimiento eficiente**, es necesario contar con los siguientes elementos:
 
@@ -53,7 +54,7 @@ Para lograr un **control de movimiento eficiente**, es necesario contar con los 
 - **Mecanismos de Transmisión:** Engranajes, husillos de bolas o correas que conectan los actuadores con la carga en movimiento.
 
 
-### 4. Ventajas del Control de Movimiento Moderno
+### Ventajas del Control de Movimiento Moderno
 
 La implementación de sistemas de control de movimiento avanzados ofrece múltiples ventajas:
 
@@ -63,10 +64,8 @@ La implementación de sistemas de control de movimiento avanzados ofrece múltip
 - Menor desgaste mecánico y costos de mantenimiento.
 - Mayor flexibilidad y adaptabilidad en la industria.
 
-## 5. Esquemas de Control y Aplicaciones Industriales Avanzadas
 
->🔑 *Perturbaciones:* se le conoce a todo aquello que afecta de manera adversa el desarrollo de un proceso.
-## 6. Conclusiones
+## Conclusiones
 
 ## Referencias
 [1] “Comunicaciones”. Tipos y Modos de Comunicaciones. Accedido el 28 de agosto de 2024. [En línea]. Disponible: http://xkiller-damndx.mex.tl/frameset.php?url=/1488142_Caracteristicas-de-las-senales-y-Conceptos-de-Ondas.html
