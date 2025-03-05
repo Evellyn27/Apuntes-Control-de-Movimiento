@@ -66,7 +66,13 @@ La implementación de sistemas de control de movimiento avanzados ofrece múltip
 
 
 ## Conclusiones
+Dentro de la temática, se pudo llegar a las siguientes conclusiones:
 
+En primer lugar, se identifica que la evolución del control de movimiento ha permitido una transición desde sistemas mecánicos tradicionales hacia soluciones digitales más avanzadas, lo que ha optimizado la precisión y eficiencia en distintos entornos industriales, en ese sentido, este cambio ha favorecido una mayor automatización, reduciendo la dependencia de mecanismos de transmisión mecánica y mejorando la capacidad de respuesta de los sistemas ante variaciones en la operación.
+
+Por otro lado, el impacto del control de movimiento en sectores como la robótica, la manufactura y la industria automotriz ha sido significativo, ya que ha permitido mejorar la estabilidad y confiabilidad de los procesos, además de favorecer la reducción de costos de mantenimiento, esto se evidencia en la capacidad de estos sistemas para adaptarse a diferentes condiciones operativas ha generado una mayor sostenibilidad en los procesos productivos, asegurando un uso más eficiente de los recursos disponibles.
+
+Finalmente, se evidencia que el avance en el control de movimiento seguirá transformando la automatización industrial, integrando nuevas tecnologías que potencien la eficiencia operativa y mejoren la conectividad de los sistemas, por ende, la digitalización y la optimización en tiempo real consolidarán su papel como un elemento clave en la evolución de la industria, garantizando un desarrollo continuo hacia soluciones más inteligentes y autónomas que fortalezcan la competitividad y la innovación en diversos sectores.
 ## Referencias
 [1] “Comunicaciones”. Tipos y Modos de Comunicaciones. Accedido el 28 de agosto de 2024. [En línea]. Disponible: http://xkiller-damndx.mex.tl/frameset.php?url=/1488142_Caracteristicas-de-las-senales-y-Conceptos-de-Ondas.html
 
