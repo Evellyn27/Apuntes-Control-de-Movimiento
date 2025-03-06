@@ -29,7 +29,7 @@ En esta clase se explicaron los sistemas de control de movimiento, enfocándose 
 ## Modelado de Motor DC
 💡**Ejemplo de modelo de motor DC:**
 
-![Figura de modelo motor](imagenes/Modelo_motorDC.png)
+![Figura de modelo motor](https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/fb9bf4306ce4489e1be4087e9776b602193d4242/Imagenes/WhatsApp%20Image%202025-03-05%20at%2011.08.38%20PM.jpeg)
 
 Figura 1. Modelo motor DC
 
