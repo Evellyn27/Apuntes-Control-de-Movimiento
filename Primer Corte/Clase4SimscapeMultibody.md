@@ -65,7 +65,7 @@ Establece el marco de referencia global para todos los objetos en la simulación
 Establece las propiedades generales del mecanismo, como la gravedad y la resolución numérica.
 
 <p align="center">
-  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/672abf7cffd30f356361f325c8f67f83f169805a/Imagenes/Sistema.png">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/9a0ddb741a40a2e211102fc7050b76715eebadda/Captura%20de%20pantalla%202025-03-06%20002347.png">
 </p>
 
 <p align="center">
@@ -93,7 +93,7 @@ Este parámetro se usa para la linealización del modelo y se mantiene en `0.001
 Representa un cuerpo rígido con forma de bloque en la simulación.
 
 <p align="center">
-  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/672abf7cffd30f356361f325c8f67f83f169805a/Imagenes/Sistema.png">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/ca825b07aeff7bf13ad8d3110a6cea906cff23aa/Imagenes/Brick.png">
 </p>
 
 **Configuración básica**
@@ -106,28 +106,79 @@ Representa un cuerpo rígido con forma de bloque en la simulación.
 Establece una transformación rígida entre dos elementos, permitiendo posicionarlos y orientarlos correctamente.
 
 <p align="center">
-  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/672abf7cffd30f356361f325c8f67f83f169805a/Imagenes/Sistema.png">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/1dcdeab07f54759fe10a5e58393c883ae6ab1117/Imagenes/Metodo.png">
 </p>
 
 El bloque *Rigid Transform* en Simscape Multibody permite establecer una relación fija de posición y orientación entre dos marcos de referencia sin deformación. A través de sus parámetros de **rotación** y **traslación**, se pueden definir transformaciones geométricas para conectar correctamente los componentes de un modelo mecánico.
 
 En la configuración mostrada, ambos parámetros están en `None`, lo que indica que no se está aplicando ninguna transformación, dejando los marcos de referencia en la misma posición y orientación relativa.
 
+## Diseño del Modelo
 
-## CONCLUSIONES
+### Visualización del Bloque Brick Solid
+Para representar correctamente el sólido dentro del entorno de simulación, es fundamental establecer las conexiones adecuadas entre el bloque **Brick Solid** y los bloques iniciales:
+-  **Bloque de parámetros:** Define las propiedades físicas y geométricas del sólido.
+-  **Bloques de inspección:** Permiten supervisar y validar el comportamiento del modelo durante la simulación.
 
-* Simscape Multibody es una herramienta poderosa y versátil dentro del entorno MATLAB, que permite modelar, analizar y optimizar sistemas mecánicos tridimensionales mediante cuerpos rígidos, articulaciones y fuerzas, facilitando el diseño de mecanismos complejos.
+Estas interconexiones aseguran que la estructura del sistema esté correctamente definida, mejorando la precisión de la simulación y facilitando la interpretación de los resultados.
 
-* La integración con otros dominios físicos (hidráulicos, eléctricos y neumáticos) permite la creación de modelos más realistas y completos, mejorando la precisión de las simulaciones.
+### Personalización del Bloque Brick Solid
+Dentro de los parámetros del **Brick Solid**, es posible modificar:
+- **Dimensiones**: Permite cambiar la forma geométrica del objeto.
+- **Color**: Facilita la identificación visual en la simulación.
+- **Propiedades físicas**: Se puede ajustar la densidad y distribución de masa.
 
-* Su capacidad de visualización 3D y análisis avanzado facilita la interpretación del comportamiento dinámico de los sistemas, permitiendo una validación más intuitiva y detallada antes de la implementación física.
+En este caso, el sólido se transformó de un **cubo** a un **rectángulo con menor profundidad** y su color cambió a **morado** para mejorar su visualización en la simulación.
 
-* La configuración automática del solver mediante la opción Auto (Automatic Solver Selection) optimiza la precisión y eficiencia de los cálculos numéricos, eliminando la necesidad de ajustes manuales complejos.
+> 📌 **Nota:** Este modelo se configura solo como un ejemplo ilustrativo y no representa un caso de aplicación específica.
 
-* El uso de bloques de configuración en Simscape Multibody permite establecer de manera estructurada los parámetros clave de la simulación, como el marco de referencia, las ecuaciones del sistema y las propiedades físicas del mecanismo.
+### Generación de Movimiento Oscilatorio
+Para generar un movimiento oscilatorio de tipo **péndulo**, se deben realizar ajustes adicionales en el bloque **Brick Solid**, los cuales influyen en sus propiedades físicas y de interacción con el entorno de simulación. Estos ajustes garantizan la correcta ejecución del comportamiento dinámico deseado.
 
-* La compatibilidad con Simulink facilita la integración de sistemas de control en los modelos mecánicos, lo que permite realizar simulaciones más completas e interactivas.
+**Características y Funcionalidades de los Parámetros**
 
-* El comando smnew simplifica la creación de nuevos modelos al generar automáticamente un entorno de trabajo preconfigurado para la simulación de sistemas multicuerpo.
+* Frame Name
 
-En general, Simscape Multibody es una herramienta fundamental para ingenieros y diseñadores que buscan realizar pruebas virtuales, optimizar el rendimiento de los mecanismos y reducir costos en el desarrollo de sistemas mecánicos avanzados.
+  Permite asignar un nombre al marco de referencia del sólido, facilitando su identificación dentro del modelo de simulación.
+
+* Frame Origin (Origen del Marco de Referencia)
+
+  Define la ubicación del origen del marco de referencia del sólido. Opciones disponibles:
+  - **At Reference Frame Origin:** Ubica el origen en el mismo punto que el marco de referencia global.
+  - **At Center of Mass:** Coloca el origen en el centro de masa del sólido, útil para cálculos dinámicos.
+  - **Based on Geometric Feature:** Define el origen en función de una característica geométrica específica del objeto.
+
+* Frame Axes (Ejes del Marco de Referencia)
+
+  Permite establecer la orientación de los ejes del marco de referencia.
+
+* Primary Axis (Eje Primario)
+  
+  Opciones disponibles:
+  - **Along Reference Frame Axis:** Alinea el eje primario con un eje global (por ejemplo, -Z).
+  - **Along Principal Inertia Axis:** Alinea el eje primario con un eje principal de inercia del sólido.
+  - **Based on Geometric Feature:** Define la orientación del eje en función de una característica geométrica del sólido.
+
+* Secondary Axis (Eje Secundario)
+
+  Opciones disponibles:
+  - **Along Reference Frame Axis:** Alinea el eje secundario con un eje global (por ejemplo, -X).
+  - **Along Principal Inertia Axis:** Alinea el eje secundario con un eje principal de inercia del sólido.
+  - **Based on Geometric Feature:** Define la orientación del eje en función de una característica geométrica del sólido.
+
+## CONCLUSIONES 
+De lo anterior se destaca que: 
+
+Simscape Multibody se destaca como una herramienta robusta y versátil dentro del entorno MATLAB, permitiendo modelar y analizar sistemas mecánicos tridimensionales mediante la representación de cuerpos rígidos, articulaciones y fuerzas. Su capacidad para visualizar en 3D el comportamiento dinámico de los mecanismos facilita la interpretación de los resultados, ofreciendo una validación más intuitiva antes de la implementación física. Además, su integración con otros dominios físicos, como los sistemas hidráulicos, eléctricos y neumáticos, permite desarrollar modelos más realistas y detallados, mejorando la precisión de las simulaciones.
+
+La eficiencia en los cálculos numéricos es otro aspecto clave de Simscape Multibody, gracias a su opción de selección automática del solver (Auto), que optimiza la precisión sin necesidad de ajustes manuales complejos. Asimismo, el uso de bloques de configuración estructurados posibilita el control preciso de los parámetros del sistema, como el marco de referencia, las ecuaciones del sistema y las propiedades físicas de los mecanismos. Estas características permiten un flujo de trabajo más organizado y eficiente en el desarrollo de simulaciones multicuerpo.
+
+Finalmente, su compatibilidad con Simulink amplía significativamente sus aplicaciones, ya que permite la integración de sistemas de control en los modelos mecánicos, posibilitando simulaciones más interactivas y completas. Además, el comando smnew facilita la creación de nuevos proyectos al generar automáticamente un entorno de trabajo preconfigurado. En conjunto, estas características convierten a Simscape Multibody en una herramienta indispensable para ingenieros y diseñadores que buscan optimizar el rendimiento de sus mecanismos, reducir costos de desarrollo y realizar pruebas virtuales con gran precisión antes de la implementación real.
+
+
+## REFERENCIAS
+
+
+
+
+
