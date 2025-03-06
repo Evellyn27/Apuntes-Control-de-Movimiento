@@ -1,10 +1,9 @@
 # Control de Movimiento
 
-## Introducción
+
 En esta clase se explicaron los sistemas de control de movimiento, enfocándose en servomotores y motores eléctricos. Explicando la importancia de los sistemas de control para regular la posición, velocidad y torque de un motor.
 
-##Servomotor
-Proviene de la palabra esclavo, y se refiere a la capacidad del sistema para seguir comandos de posición, velocidad o torque mediante un sistema de control. Tambien son conocidos como servomecanismos.
+>🔑 *Servomotor:* Proviene de la palabra esclavo, y se refiere a la capacidad del sistema para seguir comandos de posición, velocidad o torque mediante un sistema de control. Tambien son conocidos como servomecanismos.
 
 ## Tipos de Motores
 ### Motores de Corriente Continua (DC)
