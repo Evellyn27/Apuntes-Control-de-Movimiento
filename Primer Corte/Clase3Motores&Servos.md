@@ -1,4 +1,4 @@
-# Control de Movimiento
+# Motores Y Servos
 
 
 En esta clase se explicaron los sistemas de control de movimiento, enfocándose en servomotores y motores eléctricos. Explicando la importancia de los sistemas de control para regular la posición, velocidad y torque de un motor.
