@@ -74,13 +74,9 @@ Por otro lado, el impacto del control de movimiento en sectores como la robótic
 
 Finalmente, se evidencia que el avance en el control de movimiento seguirá transformando la automatización industrial, integrando nuevas tecnologías que potencien la eficiencia operativa y mejoren la conectividad de los sistemas, por ende, la digitalización y la optimización en tiempo real consolidarán su papel como un elemento clave en la evolución de la industria, garantizando un desarrollo continuo hacia soluciones más inteligentes y autónomas que fortalezcan la competitividad y la innovación en diversos sectores.
 ## Referencias
-[1] “Comunicaciones”. Tipos y Modos de Comunicaciones. Accedido el 28 de agosto de 2024. [En línea]. Disponible: http://xkiller-damndx.mex.tl/frameset.php?url=/1488142_Caracteristicas-de-las-senales-y-Conceptos-de-Ondas.html
-
-[2] F. Miyara, CONVERSORES D/A Y A/D, 2a ed. 2004.
-
-[3] Wilaeba electronica. “Conversor digital analogico R-2R”. Índice de contenido. Accedido el 1 de septiembre de 2024. [En línea]. Disponible: https://wilaebaelectronica.blogspot.com/2017/01/conversor-digital-analogico-r-2r.html
-
-[4] Wilaeba electronica. “Conversor digital analogico por suma ponderada”. Índice de contenido. Accedido el 1 de septiembre de 2024. [En línea]. Disponible: https://wilaebaelectronica.blogspot.com/2017/01/conversor-digital-analogico-por-suma-ponderada.html
+[1]CHAPMAN (2005). "Máquinas eléctricas". McGraw-Hill.
+[2]SERRANO IRIBARNEGARAY (1989). "Fundamentos de máquinas eléctricas rotativas". Marcombo.
+[3]“AulasVirtualesECCI: Entrar al sitio”, Edu.co. [En línea]. Disponible: https://aulas.ecci.edu.co/course/view.php?id=9304 .
 
 
 
