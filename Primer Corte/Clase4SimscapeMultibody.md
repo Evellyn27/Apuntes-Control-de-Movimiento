@@ -114,6 +114,9 @@ El bloque *Rigid Transform* en Simscape Multibody permite establecer una relaci�
 En la configuración mostrada, ambos parámetros están en `None`, lo que indica que no se está aplicando ninguna transformación, dejando los marcos de referencia en la misma posición y orientación relativa.
 
 ## Diseño del Modelo
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/0070814f88fcd1efa2568dd6e3173059c48c282d/Imagenes/H.png">
+</p>
 
 ### Visualización del Bloque Brick Solid
 Para representar correctamente el sólido dentro del entorno de simulación, es fundamental establecer las conexiones adecuadas entre el bloque **Brick Solid** y los bloques iniciales:
@@ -123,6 +126,9 @@ Para representar correctamente el sólido dentro del entorno de simulación, es 
 Estas interconexiones aseguran que la estructura del sistema esté correctamente definida, mejorando la precisión de la simulación y facilitando la interpretación de los resultados.
 
 ### Personalización del Bloque Brick Solid
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/0070814f88fcd1efa2568dd6e3173059c48c282d/Imagenes/2.png">
+</p>
 Dentro de los parámetros del **Brick Solid**, es posible modificar:
 - **Dimensiones**: Permite cambiar la forma geométrica del objeto.
 - **Color**: Facilita la identificación visual en la simulación.
@@ -134,7 +140,9 @@ En este caso, el sólido se transformó de un **cubo** a un **rectángulo con me
 
 ### Generación de Movimiento Oscilatorio
 Para generar un movimiento oscilatorio de tipo **péndulo**, se deben realizar ajustes adicionales en el bloque **Brick Solid**, los cuales influyen en sus propiedades físicas y de interacción con el entorno de simulación. Estos ajustes garantizan la correcta ejecución del comportamiento dinámico deseado.
-
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/0070814f88fcd1efa2568dd6e3173059c48c282d/Imagenes/F.png">
+</p>
 **Características y Funcionalidades de los Parámetros**
 
 * Frame Name
@@ -177,6 +185,7 @@ Finalmente, su compatibilidad con Simulink amplía significativamente sus aplica
 
 
 ## REFERENCIAS
+[1] MathWorks, "Simscape Multibody," [En línea]. Disponible: https://la.mathworks.com/products/simscape.html. [Accedido: 06-Mar-2025].
 
 
 
