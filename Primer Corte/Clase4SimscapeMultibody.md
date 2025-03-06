@@ -17,54 +17,102 @@ Automatización y análisis: Ofrece herramientas para la parametrización, optim
 
 Gracias a estas características, Simscape Multibody se posiciona como una herramienta fundamental para ingenieros y diseñadores que buscan desarrollar y probar sistemas mecánicos de manera eficiente y precisa.
 
-## 1 CONFIGURACION DEL SOLVER
+## Elementos Clave en Simscape Multibody
 
-![Image](https://github.com/user-attachments/assets/02e3e45a-f5fa-4a09-83b0-9a6cd5cc355e)
+Los siguientes bloques son fundamentales para la construcción de modelos en Simscape Multibody dentro de MATLAB:
 
-Figura 1. Configuracion solver
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/672abf7cffd30f356361f325c8f67f83f169805a/Imagenes/Sistema.png">
+</p>
+### Solver Configuration
+Define los parámetros de resolución numérica del modelo, como la tolerancia y el método de integración.
 
-Dentro de la configuración del solver en Simscape, se debe seleccionar la opción "Solver". Posteriormente, en la barra desplegable, se elige la opción "Auto (Automatic Solver Selection)".
+* Solver en paso fijo
 
-* La opción "Auto (Automatic Solver Selection)" permite que Simscape seleccione automáticamente el solver más adecuado para la simulación, en función de las características del modelo. Esto ayuda a optimizar la precisión y eficiencia del cálculo numérico sin necesidad de que el usuario configure manualmente el tipo de solver, facilitando así la simulación de sistemas físicos complejos.
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/c705a0c17d2775a278025cd4e166906a85fdfb2f/Imagenes/Captura%20de%20pantalla%202025-03-06%20001531.png">
+</p>
+  
+  El paso fijo mantiene un intervalo de tiempo constante entre cálculos, lo que es útil para sistemas de tiempo real y control embebido. MATLAB ofrece varias opciones, dependiendo de la precisión deseada:
+  
+  - **ode1 (Euler)**: Método simple y rápido, pero menos preciso.
+  - **ode3, ode5 (Runge-Kutta)**: Métodos más precisos, pero requieren más cálculo.
+  - **Auto**: MATLAB selecciona automáticamente el solver adecuado.
 
+> 📌 **Nota:** En *Fixed-step size*, establece el intervalo de tiempo de cada cálculo. Por ejemplo, si se configura en `0.01`, la simulación calculará datos cada `0.01` segundos. Un paso más pequeño mejora la precisión, pero aumenta el tiempo de simulación.
 
-para dar inicio al archico multivody es necesiario usar la funcion >> smnew
+* Solver en paso variable
 
-![Image](https://github.com/user-attachments/assets/60be9cd9-3a40-4bb6-b052-2b6fc5b9d981)
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/e8037c9f73f57638e6e4eb322ec289ccc8571e90/Imagenes/Captura%20de%20pantalla%202025-03-06%20001947.png">
+</p>
 
-Figura 2. Apertura de la pestaña de simscape
+  El paso variable ajusta dinámicamente el tamaño del paso de tiempo según la complejidad del sistema en cada instante, lo que permite mayor precisión y eficiencia.
 
-## 2 BLOQUES DE CONFIGURACION
+  MATLAB ofrece varios solvers para paso variable. Algunas opciones recomendadas son:
+  - **ode45 (Dormand-Prince)**: Solver de uso general, bueno para modelos sin discontinuidades.
+  - **ode23t (Trapezoidal)**: Recomendado para modelos con Simscape, ya que maneja bien sistemas rígidos.
+  - **ode15s (Stiff/NDF)**: Útil para sistemas con ecuaciones diferenciales rígidas.
 
-**Primer bloque:** Configura las ecuaciones y su respectiva sintonización, siempre debe usarse en los modelos Simscape.
+### World Frame
+Establece el marco de referencia global para todos los objetos en la simulación.
 
-**Segundo bloque:** Configura el “mundo” a partir de la definición de los ejes de coordenadas.
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/5f80afc4c24e07f42689474028f0449b7c739a39/Imagenes/Captura%20de%20pantalla%202025-03-06%20002101.png">
+</p>
 
-**Tercer bloque:** Configura el marco de referencia de leyes físicas (gravedad).
+### Mechanism Configuration
+Establece las propiedades generales del mecanismo, como la gravedad y la resolución numérica.
 
-![Image](https://github.com/user-attachments/assets/3b75f694-9303-4527-92e2-d03b98bbcf2a)
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/672abf7cffd30f356361f325c8f67f83f169805a/Imagenes/Sistema.png">
+</p>
 
-Figura 3. Funcionalidad de los bloques.
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/f9216829f984d19bf71b95f49846216a98410b2d/Imagenes/Captura%20de%20pantalla%202025-03-06%20002347.png">
+</p>
 
-### Configuracion de cada bloque
+**Parámetros del Bloque**
+* Uniform Gravity (Gravedad Uniforme)
 
-Para  configurar cada bloque es necesario dar doble click sobre cada uno de ellos y llenar los espacios en la simulacion con los datos que se observan en la figura 4.
+  Se define una gravedad constante para todo el sistema mecánico.
+  - El valor se establece en forma de vector `[x y z]`, donde cada componente indica la aceleración gravitacional en cada eje.
+  - En la imagen, el valor de gravedad es `[0 0 -9.80665]`, lo que significa que la gravedad actúa en la dirección Z negativa (sentido convencional en la Tierra).
+    
+> 📌 **Nota:** Si la gravedad está definida como `[0 -9.80665 0]`, significa que ahora actúa en la dirección Y negativa.
 
-![Image](https://github.com/user-attachments/assets/c1d6eea0-44c7-4a9e-91e7-94b715e95eb2)
+* Linearization Delta
+  
+Este parámetro se usa para la linealización del modelo y se mantiene en `0.001`, lo que controla la precisión en los cálculos numéricos.
 
-Figura 4. Configuracion de los bloques.
+* Joint Mode Transition (Transición de Modo de Articulación)
 
-* World Frame
-Define el marco de referencia global para todos los objetos dentro de la simulación.
+  **Nonlinear Iterations**: Se establece en `2`, lo que indica cuántas iteraciones se permiten en los cálculos de transición no lineales en las articulaciones.
 
-* Mechanism Configuration
-Configura las propiedades generales del mecanismo, incluyendo la gravedad y la resolución numérica.
+### Brick Solid
+Representa un cuerpo rígido con forma de bloque en la simulación.
 
-* Brick Solid
-Representa un cuerpo rígido con forma de bloque dentro de la simulación.
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/672abf7cffd30f356361f325c8f67f83f169805a/Imagenes/Sistema.png">
+</p>
 
-* Rigid Transform
-Establece una transformación rígida entre dos elementos, permitiendo su posicionamiento relativo.
+**Configuración básica**
+- **Dimensiones**: Se especifican en el formato `[largo ancho alto]` en metros.
+- **Propiedades de inercia**: Pueden definirse automáticamente o personalizarse manualmente.
+- **Gráfica y visualización**: Se pueden modificar aspectos visuales del sólido.
+- **Puntos de referencia (Frames)**: Se añaden para definir ubicaciones clave para conexiones o movimientos en la simulación.
+
+### Rigid Transform
+Establece una transformación rígida entre dos elementos, permitiendo posicionarlos y orientarlos correctamente.
+
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/672abf7cffd30f356361f325c8f67f83f169805a/Imagenes/Sistema.png">
+</p>
+
+El bloque *Rigid Transform* en Simscape Multibody permite establecer una relación fija de posición y orientación entre dos marcos de referencia sin deformación. A través de sus parámetros de **rotación** y **traslación**, se pueden definir transformaciones geométricas para conectar correctamente los componentes de un modelo mecánico.
+
+En la configuración mostrada, ambos parámetros están en `None`, lo que indica que no se está aplicando ninguna transformación, dejando los marcos de referencia en la misma posición y orientación relativa.
+
 
 ## CONCLUSIONES
 
