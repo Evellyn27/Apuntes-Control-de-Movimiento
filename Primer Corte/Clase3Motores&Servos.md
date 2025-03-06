@@ -63,7 +63,7 @@ Los drivers de potencia son circuitos que amplifican señales de control para pr
 ## Simulacion
 💡**Ejemplo de simulación de motor DC:**
 
-![Figura de simulacion motor](imagenes/Simulacion_motorDC.png)
+![Figura de simulacion motor](https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/dbd817ab6748dfd9d8dea6738c039e7c282fc569/Imagenes/WhatsApp%20Image%202025-03-05%20at%2011.08.38%20PM%20(1).jpeg)
 
 Figura 2. Simulación motor DC
 
@@ -74,7 +74,7 @@ Figura 2. Simulación motor DC
 - Uso de inversores y modulación SPWM (Sinusoidal Pulse Width Modulation) para el control de motores de corriente alterna, mejorando la eficiencia y el rendimiento en sistemas de alta potencia.
 - 💡**Ejemplo de control de torque de motor DC:**
 
-![Figura de torque motor](imagenes/Control_torqueDC.png)
+![Figura de torque motor](https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/6b160a51e01276836bdf6c125434aab28e8f093e/Imagenes/WhatsApp%20Image%202025-03-05%20at%2011.08.38%20PM%20(2).jpeg)
 
 Figura 3. Control torque motor DC
 
