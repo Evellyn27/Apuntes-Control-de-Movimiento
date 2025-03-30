@@ -1,69 +1,55 @@
-# Fundamentos de Control de Movimiento
-Actualmente, los sistemas de control de movimiento son fundamentales en el área de la automatización industrial, ya que permiten gestionar y coordinar el desplazamiento de cargas a través de actuadores y controladores, mejorando la precisión y la eficiencia en los procesos. Sin embargo, esto no siempre fue así, ya que antes de su implementación se dependía de sistemas de transmisión mecánica complejas que aunque eran funcionales, presentaban limitaciones en términos de flexibilidad y mantenimiento. En ese sentido, con el avance de la tecnología, estos sistemas fueron reemplazados por soluciones digitales más avanzadas, que integraban estrategias de retroalimentación donde se optimizaban el rendimiento y la adaptabilidad. 
+# Perfiles de Movimiento Avanzados: Curvas en S y Movimiento Multieje
+Los perfiles de movimiento juegan un papel clave en aplicaciones donde la precisión y el control son determinantes, ya que permiten optimizar el desempeño y reducir esfuerzos mecánicos innecesarios, por esta razón, el uso de curvas en S se ha convertido en una estrategia fundamental, dado que suaviza las transiciones al regular la aceleración y desaceleración de forma progresiva, minimizando vibraciones y mejorando la estabilidad del sistema. Además, en entornos con múltiples actuadores, el movimiento multieje cobra importancia, pues asegura que cada eje siga su trayectoria de manera sincronizada para evitar desajustes, lo que garantiza desplazamientos precisos y eficientes, contribuyendo no solo a un mejor rendimiento, sino también a una mayor vida útil de los componentes mecánicos y electrónicos involucrados.
 
----
-## Evolución del Control de Movimiento
-Desde sus inicios, la industria ha depositado su confianza  en los sistemas de transmisión mecánica para transferir energía y movimiento a través de mecanismos como engranajes, correas y cadenas, que permiten configurarse en innumerables aplicaciones, sin embargo, el diseño y mantenimiento del mismo plantea retos que con el tiempo han llevado a la búsqueda de opciones más sofisticadas, incorporando sensores y algoritmos avanzados, el control de movimiento ha evolucionado hacia sistemas digitales más eficientes y adaptables.
+## Perfil de Movimiento con Curva en S
+>🔑 *Perfiles de movimiento con curvas en S :* Es una estrategia de control que utiliza transiciones progresivas para suavizar la aceleración y desaceleración, lo que reduce el jerk (cambios bruscos de aceleración) y optimiza el tiempo de transferencia punto a punto al ajustar el perfil según la carga. 
+
 
 <p align="center">
-  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/e5c78494079f45b4aca660a2ef2e218f0795a500/Imagenes/Evolucion.png">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/fde05a7c2dfa995b4eae15b8751aca7331d24520/Imagenes/Betterimage.ai_1743358409497.jpeg"  width="900">
 </p>
 
->🔑 *Sistema de transmisión mecánica:* Es un conjunto de elementos diseñados para transferir potencia y movimiento desde un componente motriz (como un motor) hasta un elemento receptor (como una rueda o una herramienta). 
 
->🔑 *Variable Controlada:* se refiere a la cantidad o condición es midible y  se pretende controlar.
+Estos suelen implementar dentro de su comportamiento una dinámica de 7 fases, ya que además de acelerar, deslizar y desacelerar, incorporan segmentos de transición que permiten una distribución progresiva y continua de la aceleración, eliminando picos abruptos y reduciendo el jerk, generando así un desplazamiento más fluido, preciso y estable.
 
->🔑 *Variable Manipulada:* esta variable permite condicionar a la variable controlada mediante una modificacion de la misma.
+### Características
 
-#### Comparación entre Sistemas de Transmisión y Control de Movimiento
-| Característica              | Sistemas de Transmisión Mecánica | Sistemas de Control de Movimiento |
-|----------------------------|--------------------------------|--------------------------------|
-| **Precisión**              | Baja a media                  | Alta                          |
-| **Flexibilidad**           | Limitada                      | Adaptable                      |
-| **Eficiencia Energética**  | Dependiente de fricción y desgaste | Optimizada mediante algoritmos |
-| **Mantenimiento**          | Frecuente debido al desgaste mecánico | Menor, basado en software y sensores |
-| **Costo Inicial**          | Bajo a medio                   | Medio a alto                   |
-| **Aplicaciones**           | Transportadores, maquinaria pesada | Robótica, automatización avanzada |
+- **Reducción de Vibraciones:** Inyecta mucho menos energía vibratoria en los mecanismos y la carga, tanto con servomotores como con motores paso a paso.
+  
+- **Ajuste de Oscilaciones:** Permite cancelar oscilaciones ajustando la relación entre las fases de transición y los tramos de aceleración constante.
+  
+- **Optimización del Tiempo de Transferencia Efectivo:** Reduce en un 25–33 % el tiempo desde que la carga inicia su movimiento hasta que se asienta, ideal para movimientos punto a punto de alta velocidad.
+  
+- **Gestión Uniforme del Jerk:** Mantiene un valor constante de cambio en la aceleración (jerk), distribuyendo el cambio a lo largo del tiempo.
+  
+### Comparación entre Sistemas de Transmisión y Control de Movimiento
+| Característica               | Curva en S                                                                 | Perfil Trapezoidal                                                     |
+|------------------------------|----------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Complejidad del Perfil       | Estructura de 7 fases con transiciones progresivas y continuas             | Estructura de 3 fases con cambios abruptos                             |
+| Rendimiento en Transferencia | Optimiza el tiempo efectivo, permitiendo movimientos punto a punto ágiles    | Mayor tiempo de estabilización en cada movimiento                      |
+| Impacto Mecánico             | Minimiza impactos y reduce el desgaste al distribuir uniformemente el jerk   | Picos de aceleración que generan vibraciones y aceleran el desgaste      |
+| Adaptabilidad a Cargas       | Ajuste preciso de las transiciones según la carga, cancelando oscilaciones   | Menor flexibilidad para adaptarse a variaciones en la carga             |
+| Precisión y Estabilidad      | Control refinado que mejora la precisión y estabilidad del sistema           | Transiciones bruscas        |
+
 
 💡**Ejemplo 1:** En este caso se muestra como se comportan cada uno de los sistemas
 
-<p align="center">
-  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/4a0e2390f544039b20eead564869dbb0157ae80b/Imagenes/Captura%20de%20pantalla%202025-03-05%20122647.png">
-</p>
 
-## Ejes de Movimiento y Componentes Clave
+### Tipos de curvas en S
 
-Los sistemas de control de movimiento operan a través de distintos **ejes de movimiento**, los cuales determinan los grados de libertad de un mecanismo. Dependiendo de la aplicación, estos pueden clasificarse en:
-
-- **Ejes Lineales:** Permiten el desplazamiento en una sola dirección, como en sistemas de automatización y ensamblaje.
-- **Ejes Rotacionales:** Utilizados en brazos robóticos y maquinaria CNC, donde se requiere giro y precisión angular.
-- **Ejes Combinados:** Sistemas con múltiples grados de libertad que permiten movimientos complejos en diferentes planos.
-
-<p align="center">
-  <img src="https://media.giphy.com/media/cnXQkaPEwri6o0RjpR/giphy.gif">
-</p>
-
-### Componentes Clave de un Sistema de Control de Movimiento
-
-Para lograr un **control de movimiento eficiente**, es necesario contar con los siguientes elementos:
-
-- **Controlador de Movimiento:** Coordina las señales y define la trayectoria del movimiento.
-- **Accionamiento o Amplificador:** Convierte las señales de control en potencia para accionar los motores.
-- **Actuadores (Motores):** Convierten la energía eléctrica en movimiento mecánico.
-- **Sensores y Retroalimentación:** Dispositivos como encoders y resolvers que permiten ajustar el comportamiento del sistema en tiempo real.
-- **Mecanismos de Transmisión:** Engranajes, husillos de bolas o correas que conectan los actuadores con la carga en movimiento.
+- **Curva en S Estandar:** 
+- **Curva en S Estandar:**
 
 
-### Ventajas del Control de Movimiento Moderno
 
-La implementación de sistemas de control de movimiento avanzados ofrece múltiples ventajas:
+## Modelo Matemático del Perfil de Movimiento en S
 
-- Mayor precisión y repetibilidad en los procesos.
-- Optimización del consumo energético.
-- Mejor respuesta ante perturbaciones y variaciones de carga.
-- Menor desgaste mecánico y costos de mantenimiento.
-- Mayor flexibilidad y adaptabilidad en la industria.
 
+
+
+## Métodos de Coordinación de Movimiento Multieje
+### Slew Motion (Movimiento Independiente de los Ejes)
+### Interpolated Motion (Sincronización de Movimiento)
 
 ## Conclusiones
 Dentro de la temática, se pudo llegar a las siguientes conclusiones:
