@@ -74,6 +74,59 @@ $$
 Donde $C_1$, $C_2$ y $C_3$ son coeficientes determinados por las condiciones de frontera, logrando un desplazamiento más controlado y eficiente al reducir vibraciones e impactos en sistemas mecánicos.  
 
 
+En este contexto, para obtener cada coeficiente, se analiza cada segmento de la curva en S, en ese sntido como se muestra en la figura, hay dos secciones, A y B, y en este caso se realizará el análisis de la sección A.
+
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/13949018ee22e88b273505ede4aab3b705e53d19/Imagenes/Captura%20de%20pantalla%202025-03-30%20165645.jpg"  width="600">
+</p>
+
+Se imponen las siguientes condiciones de frontera:
+**Condición inicial (t = 0):**  
+   La velocidad inicial es cero:
+
+<p align="center">
+   $$v(0) = C_1 (0)^2 + C_2 (0) + C_3 = 0 \quad\Longrightarrow\quad C_3 = 0$$
+</p>
+
+**Condición de aceleración inicial:**  
+   La aceleración se obtiene derivando la velocidad:
+
+<p align="center">
+   $$a(t) = \frac{dv}{dt} = 2C_1 t + C_2$$
+   </p>
+   
+Si se requiere que la aceleración inicial sea cero, se impone:
+
+   <p align="center">
+   $$a(0) = C_2 = 0$$
+  </p>
+
+**Condición intermedia (t = $$\frac{t_a}{2}$$):**  
+Se establece que la velocidad a la mitad del tiempo de aceleración es la mitad de la velocidad máxima:
+
+<p align="center">
+   $$v\left(\frac{t_a}{2}\right) = \frac{v_m}{2}$$
+   </p>
+   
+Con $C_2 = 0$ y $C_3 = 0$ , se tiene:
+
+   <p align="center">
+   $$C_1 \left(\frac{t_a}{2}\right)^2 = \frac{v_m}{2}$$
+   </p>
+   
+   De donde se despeja:
+
+   <p align="center">
+   $$C_1 = \frac{2v_m}{t_a^2}$$
+  </p>
+  
+Así, los coeficientes quedan definidos como:
+
+- $C_1 = \dfrac{2v_m}{t_a^2}$
+- $C_2 = 0$
+- $C_3 = 0$
+
+
 ## Métodos de Coordinación de Movimiento Multieje
 ### Slew Motion (Movimiento Independiente de los Ejes)
 ### Interpolated Motion (Sincronización de Movimiento)
