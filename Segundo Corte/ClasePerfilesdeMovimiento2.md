@@ -44,7 +44,7 @@ A continuación, se muestra una tabla comparativa que resume estas diferencias:
 | Precisión y Estabilidad      | Control refinado que mejora la precisión y estabilidad del sistema           | Transiciones bruscas        |
 
 
-💡**Ejemplo 1: Análisis Experimental según Performance Motion Devices**
+💡**Ejemplo: Análisis Experimental según Performance Motion Devices**
 
 El experimento realizado por Performance Motion Devices evaluó cómo los perfiles de movimiento afectan la estabilidad de la carga utilizando un motor lineal conectado a una carga con elasticidad controlada, replicando un sistema mecánico real
 
@@ -126,6 +126,7 @@ Así, los coeficientes quedan definidos como:
 - $C_2 = 0$
 - $C_3 = 0$
 
+💡**Ejemplo: Análisis Curva S de 3 segmentos**
 
 ## Métodos de Coordinación de Movimiento Multieje
 ### Slew Motion (Movimiento Independiente de los Ejes)
