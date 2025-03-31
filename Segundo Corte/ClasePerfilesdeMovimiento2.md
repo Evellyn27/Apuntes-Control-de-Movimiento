@@ -150,7 +150,7 @@ Este método consiste en ejecutar el movimiento de cada eje de forma secuencial,
 ### Slew Motion (Movimiento Independiente de los Ejes)
 En este enfoque, ambos ejes se ponen en marcha al mismo tiempo pero cada uno sigue su propio perfil de velocidad y aceleración, lo que permite que cada eje se adapte a sus propias condiciones de trabajo y se mueva de forma simultánea sin exigir que inicien ni finalicen exactamente al mismo instante, de esta forma se obtiene una mayor flexibilidad en el control, aunque la sincronización global puede no ser perfecta.
 
-💡**Ejemplo de Clase:**
+#### 💡Ejemplo de Clase:
 
 Si ambos ejes de una máquina se mueven a 4 cm/s con un perfil de velocidad trapezoidal y un tiempo de aceleración \( t_a = 0.2 \) s, ¿cuánto tiempo tomará a cada eje completar su movimiento si las distancias a recorrer son $L_x = 16$ cm y $L_y = 12$ cm?  
 
@@ -161,10 +161,12 @@ Si ambos ejes de una máquina se mueven a 4 cm/s con un perfil de velocidad trap
 **Cálculo:**  
 
 - Para el eje **X**:
-  
+
+
   <p align="center">
-  $$ t_{m_x} = \frac{L_x}{v_m} - t_a = \frac{16}{4} - 0.2 = 3.8 \text{ s} $$  
+  $$t_{m_x} = \frac{L_x}{v_m} - t_a = \frac{16}{4} - 0.2 = 3.8 \text{ s}$$  
 </p>
+
 
 <p align="center">
   $$ t_{total_x} = t_{m_x} + 2t_a = 3.8 + 2(0.2) = 4.2 \text{ s} $$  
@@ -183,7 +185,7 @@ $$ t_{total_y} = t_{m_y} + 2t_a = 2.8 + 2(0.2) = 3.2 \text{ s} $$
 El eje **X** tardará **4.2 s** en completar su movimiento, mientras que el eje **Y** lo hará en **3.2 s**.
 
 
-📚 **Ejercicio 1:**
+#### 📚 Ejercicio 1:
 
 Un sistema cartesiano con dos ejes, $x$ y $y$, debe mover cada eje de forma independiente sin sincronización estricta. El eje $x$ debe recorrer $L_x = 18$ cm y el eje $y$ debe recorrer $L_y = 12$ cm. Ambos se mueven a una velocidad de 6 cm/s con un perfil de velocidad trapezoidal y un tiempo de aceleración de $t_a = 0.2$ s. ¿Cuánto tiempo tomará a cada eje completar su movimiento?  
 
@@ -217,7 +219,7 @@ Para cada eje, el tiempo de movimiento se calcula como:
 
 Este método se basa en planificar una trayectoria global en la que se calculan puntos de referencia comunes para todos los ejes, de modo que cada uno inicie y termine su movimiento de forma sincronizada, utilizando algoritmos de interpolación se logra que la velocidad y la aceleración de cada eje se ajusten de manera coordinada, lo que da como resultado una trayectoria suave y precisa, ideal para aplicaciones que requieren alta sincronización.
 
-💡**Ejemplo de Clase:**
+#### 💡Ejemplo de Clase:
 
 Dado el ejemplo anterior, al calcular por interpolación se encuentra que la velocidad del eje \( y \) debe ajustarse para que ambos ejes terminen al mismo tiempo.  
 
@@ -235,7 +237,7 @@ $$ v_y = \frac{L_y}{t_m + t_a} = \frac{12}{3.8 + 0.2} $$
 $$ v_y = \frac{12}{4} = 3 \text{ cm/s} $$  
 </p> 
 
-📚 **Ejercicio 2:**
+#### 📚 Ejercicio 2:
 
 Para mejorar la sincronización del sistema, se busca que ambos ejes terminen su movimiento al mismo tiempo. La velocidad del eje $x$ se mantiene en $v_x = 5$ cm/s y su tiempo total de movimiento es $t_{\text{total}} = 4.3$ s. ¿Cuál debe ser la nueva velocidad $v_y$ para que el eje $y$ termine simultáneamente con el eje $x$?  
 
@@ -250,6 +252,7 @@ Se despeja $v_y$ de la ecuación del tiempo de movimiento:
 <p align="center">
   $$ v_y = \frac{15}{(4.3 - 2(0.3))} = \frac{15}{3.7} \approx 4.05 \text{ cm/s} $$  
 </p>  
+
 ## Conclusiones
 Dentro de la temática, se pudo llegar a las siguientes conclusiones:
 
