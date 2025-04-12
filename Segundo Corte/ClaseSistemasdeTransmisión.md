@@ -1,8 +1,7 @@
-# SEMANA-9
+# Sistemas de transmisión
+Los sistemas de transmisión son fundamentales en ingeniería e industria ya que permiten transferir la potencia desde una fuente de energía, como un motor, hacia los componentes que realizan el trabajo mecánico. Estos sistemas controlan el movimiento, la velocidad y la dirección de los mecanismos, asegurando un funcionamiento eficiente y preciso. Están compuestos por una variedad de elementos como ejes, engranajes, cadenas, correas y transmisores de fluido, que trabajan juntos para transmitir la energía de acuerdo a las necesidades del sistema. Un diseño adecuado de estos sistemas es esencial para optimizar el rendimiento de maquinaria y vehículos, mejorando su fiabilidad, durabilidad y eficiencia operativa.
 
-# Control de Movimiento
-
-## 1) Diseño de Transmisión
+## 1. Diseño de Transmisión
 
 El diseño de transmisión tiene como objetivo transferir potencia y movimiento entre diferentes elementos mecánicos, utilizando sistemas como engranajes, correas y cadenas. Esta transferencia debe ser eficiente, precisa y segura, para asegurar el correcto funcionamiento de máquinas industriales, robots, vehículos y sistemas automatizados. Un diseño bien hecho optimiza el rendimiento energético, minimiza el desgaste, asegura precisión en el movimiento y se adapta a variaciones en la carga.
 
@@ -10,7 +9,7 @@ Para lograrlo, se aplican principios de la cinemática, dinámica y resistencia 
 
 ---
 
-## 2) Requisitos de Diseño
+## 2. Requisitos de Diseño
 
 Antes de diseñar un sistema de control de movimiento, es necesario definir claramente sus requerimientos. Esto incluye la correcta selección del motor y del mecanismo de transmisión, así como una evaluación del comportamiento del sistema ante distintas cargas y condiciones de trabajo.
 
@@ -27,7 +26,7 @@ A continuación, se presentan diferentes situaciones que pueden surgir en el dis
 
 ---
 
-## 3)Inercia y Torque
+## 3. Inercia y Torque
 
 ### Inercia Reflejada
 
@@ -51,7 +50,7 @@ Esto permite adaptar el sistema para reducir el esfuerzo del motor o ajustar el 
 
 ---
 
-## 4) Engranajes
+## 4. Engranajes
 
 Los engranajes son esenciales para modificar el torque y la velocidad en los sistemas mecánicos. La relación de transmisión depende del número de dientes o del diámetro de los engranajes:
 
@@ -67,7 +66,7 @@ Donde \( Z \) representa el número de dientes y \( D \) el diámetro de cada en
 
 ---
 
-## 5) Eficiencia
+## 5. Eficiencia
 
 Un sistema eficiente es aquel que logra el movimiento deseado con el menor consumo posible de energía. Esto depende de varios factores:
 
@@ -79,7 +78,7 @@ Un sistema eficiente es aquel que logra el movimiento deseado con el menor consu
 
 ---
 
-## 6) Inercia Total
+## 6. Inercia Total
 
 La inercia total que enfrenta el motor es la suma de varias componentes:
 
@@ -91,7 +90,7 @@ Esto influye directamente en la aceleración, la estabilidad del sistema y la el
 
 ---
 
-## 7) Relación de Inercia
+## 7. Relación de Inercia
 
 La relación de inercia entre la carga reflejada y el motor es clave para el rendimiento:
 
@@ -106,7 +105,7 @@ Se busca mantener esta relación dentro de un rango adecuado para lograr un equi
 
 ---
 
-## 8) Poleas y Correas
+## 8. Poleas y Correas
 
 Este sistema es común por su simplicidad y bajo costo. Es ideal para transmitir movimiento entre ejes alejados.
 
@@ -178,9 +177,7 @@ Gracias a la retroalimentación que ofrecen, se puede ajustar el comportamiento 
 
 ---
 
-## 9) Ejercicios
-
-### Ejercicio 1: Cálculo de inercia reflejada
+### 📚 Ejercicio 1: Cálculo de inercia reflejada
 
 Una carga de **50 kg** debe ser posicionada usando un tornillo esferado de acero con:
 
@@ -244,7 +241,7 @@ $J_{\text{trans ref}} \approx 8.1 \, \text{kg·m}^2$
 
 ---
 
-## Ejercicio 2 - Cálculo de Relación de Inercia
+### 📚 Ejercicio 2: Cálculo de Relación de Inercia
 
 El sistema utiliza un engranaje con las siguientes características:
 
@@ -296,22 +293,13 @@ La **relación de inercia total \( J_R \)** del sistema es:
 Esto indica que la inercia total reflejada al eje del motor es 3.75 veces mayor que la inercia propia del rotor del motor.
 ---
 
-## 9) Conclusiones
+## Conclusiones
 
-- El cálculo de la **inercia reflejada** hacia el eje de entrada es fundamental para el dimensionamiento correcto del motor en sistemas de transmisión con tornillo esferado, permitiendo prever el comportamiento dinámico del sistema y garantizar un control preciso.
+El cálculo de la inercia reflejada hacia el eje de entrada es esencial para el dimensionamiento adecuado del motor en sistemas de transmisión con tornillo esferado. Esto permite prever el comportamiento dinámico del sistema y asegurar un control preciso, lo que se traduce en una operación más eficiente y con menos riesgos de sobrecarga o fallos en el motor.
 
-- La **mayor contribución a la inercia reflejada** proviene de la carga útil y el carro, más que del tornillo en sí, lo cual subraya la importancia de considerar el peso total desplazado en el análisis.
+La mayor contribución a la inercia reflejada proviene de la carga útil y el carro, en lugar del tornillo mismo. Este aspecto resalta la importancia de considerar todo el peso desplazado en el análisis, ya que cualquier variación en la carga puede afectar significativamente el rendimiento del sistema. La correcta evaluación de estos componentes es clave para obtener un cálculo preciso de la inercia reflejada.
 
-- La **relación de transmisión \(N_s\)** tiene un efecto cuadrático inverso sobre la inercia reflejada, lo que significa que un diseño con una relación adecuada puede reducir significativamente el esfuerzo requerido por el motor.
-
-- La **eficiencia mecánica \(\eta\)** de la transmisión también afecta directamente la inercia reflejada: una eficiencia baja incrementa la inercia equivalente, por lo que es esencial emplear componentes de alta calidad y bajo coeficiente de fricción.
-
-- El uso correcto de **modelos geométricos** (como suponer el tornillo como cilindro alargado) y fórmulas específicas (como \( $J_{\text{screw}} = \frac{\pi L \rho D^4}{32}$ \)) permite estimar con mayor precisión la inercia del sistema, siempre que se utilicen unidades consistentes y adecuadas (SI o sistema inglés).
-
-- Finalmente, este tipo de análisis no solo optimiza la selección del motor, sino que también mejora la vida útil del sistema, reduce el consumo energético y mejora la seguridad operativa del conjunto.
-
-
-## 10) Referencias
+Finalmente, factores como la relación de transmisión $N_s$y la eficiencia mecánica $η$ también juegan un papel crucial. Una relación de transmisión adecuada puede reducir el esfuerzo del motor, mientras que una eficiencia baja incrementa la inercia equivalente. Emplear componentes de alta calidad y utilizar modelos geométricos precisos para estimar la inercia son pasos fundamentales para mejorar la selección del motor, aumentar la vida útil del sistema, reducir el consumo energético y garantizar la seguridad operativa.
 
 ## Referencias
 
