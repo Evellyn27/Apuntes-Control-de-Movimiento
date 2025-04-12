@@ -2,19 +2,13 @@
 
 Los perfiles de movimiento son esenciales en el control de sistemas mecánicos y robóticos, ya que permiten definir cómo se debe desplazar un actuador o mecanismo a lo largo del tiempo, optimizando la posición, velocidad y aceleración de forma coordinada para lograr movimientos más suaves, precisos y eficientes. Entre los diferentes tipos de perfiles, el trapezoidal es uno de los más utilizados debido a su estructura simple y a su capacidad para alcanzar rápidamente una velocidad constante, mantenerla por un tiempo determinado y luego desacelerar de manera controlada, lo que lo hace ideal para aplicaciones donde se requiere un posicionamiento rápido sin comprometer la estabilidad del sistema.
 
-# 1. Definición de Movimiento de Perfil
+>🔑 *Perfiles de movimiento:* es la representación detallada del desplazamiento que realiza un sistema mecánico desde un punto inicial a uno final, describiendo cómo varían en el tiempo la posición, la velocidad y la aceleración. 
 
-Un perfil de movimiento se define como la representación detallada del desplazamiento que realiza un sistema mecánico, o uno de sus componentes, desde un punto inicial (comúnmente denominado punto A) hasta un punto final (punto B). Esta representación incluye no solo la distancia recorrida, sino también cómo evolucionan en el tiempo los parámetros asociados al movimiento, tales como la posición, la velocidad y la aceleración. El diseño del perfil es crucial porque de él depende la eficiencia del sistema, la vida útil de los componentes mecánicos, y el cumplimiento de tareas específicas dentro de un proceso automatizado.
-
-Dependiendo del tipo de sistema y de la aplicación, el perfil de movimiento puede involucrar desde un solo eje de desplazamiento hasta múltiples ejes que actúan de manera simultánea y coordinada. En el caso de un solo eje en movimiento, el perfil resulta sencillo de analizar y controlar, ya que la trayectoria es lineal y las variaciones cinemáticas afectan a un único componente. Este tipo de perfil se conoce como **movimiento uniaxial**, y es ideal para aplicaciones básicas donde se requiere un desplazamiento simple y directo.
-
-Por otro lado, existen escenarios más complejos en los cuales se deben controlar varios ejes al mismo tiempo para lograr desplazamientos en múltiples direcciones o seguir trayectorias específicas. Este tipo de desplazamiento se denomina **movimiento multiaxial**. En estos casos, la complejidad del perfil de movimiento aumenta considerablemente, ya que es necesario evaluar las variaciones simultáneas de posición, velocidad y aceleración en cada uno de los ejes involucrados. El correcto diseño de estos perfiles es vital para evitar colisiones, maximizar la precisión y garantizar un comportamiento fluido del sistema.
-
-# 2. Fundamentos de la Cinemática Aplicada al Movimiento
+## 1. Fundamentos de la Cinemática Aplicada al Movimiento
 
 Para entender cómo se generan y analizan los perfiles de movimiento, es imprescindible dominar los conceptos básicos de la **cinemática**, que es la rama de la mecánica que estudia el movimiento sin considerar las fuerzas que lo causan. En este contexto, los tres parámetros más importantes son: **la posición, la velocidad y la aceleración**, cada uno con un papel específico en la descripción del comportamiento dinámico de un sistema.
 
-**La posición** \( x(t) \) representa la localización de un punto específico del sistema (como el extremo de un brazo robótico o el centro de masa de una plataforma móvil) en función del tiempo. Es el parámetro más intuitivo y fundamental, ya que define "dónde" se encuentra el sistema en cada instante.
+**La posición** $x(t)$ representa la localización de un punto específico del sistema (como el extremo de un brazo robótico o el centro de masa de una plataforma móvil) en función del tiempo. Es el parámetro más intuitivo y fundamental, ya que define "dónde" se encuentra el sistema en cada instante.
 
 **La velocidad** se define como la derivada de la posición con respecto al tiempo, es decir, indica la rapidez con la que cambia la posición en un intervalo temporal dado. Matemáticamente, se expresa como:
 
@@ -22,7 +16,7 @@ Para entender cómo se generan y analizan los perfiles de movimiento, es impresc
 v(τ) = dχ / dτ
 ```
 
-Donde \( χ \) representa la posición y \( τ \) el tiempo. La velocidad permite calcular la distancia total recorrida a lo largo del tiempo integrando su valor:
+Donde $χ$ representa la posición y $τ$ el tiempo. La velocidad permite calcular la distancia total recorrida a lo largo del tiempo integrando su valor:
 
 ```
 s = ∫ v(τ) dτ
@@ -38,11 +32,16 @@ Cuando se tiene una función de aceleración en el tiempo, se puede calcular ind
 
 La interpretación gráfica de estos conceptos también es esencial: el **área bajo la curva de velocidad** en una gráfica representa el **desplazamiento total**; mientras que la **pendiente de la curva de velocidad** en un punto dado indica el valor de la **aceleración en ese instante**.
 
-![Image](https://github.com/user-attachments/assets/4bf5b949-b4a1-4dd7-a591-54e74619cd19)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4bf5b949-b4a1-4dd7-a591-54e74619cd19"  width="500">
+</p>
 
-***Fig 1. Grafica posicion, velocidad y aceleraciòn***
+<p align="center">
+ 
+***Fig 1. Grafica posicion, velocidad y aceleración***
+</p>
 
-# 3. Principios Geométricos y Ecuaciones de Movimiento
+## 2. Principios Geométricos y Ecuaciones de Movimiento
 
 En el diseño y análisis de perfiles de movimiento, existen ciertos principios geométricos que deben respetarse para asegurar un comportamiento mecánico coherente y predecible. Entre estos principios se destaca que el área bajo la curva de velocidad siempre representa el desplazamiento neto de un sistema en un intervalo de tiempo determinado. Asimismo, la aceleración se puede visualizar como la pendiente de la curva de velocidad en una gráfica velocidad-tiempo, lo cual facilita su interpretación visual.
 
@@ -53,20 +52,24 @@ v = v₀ + a(t - t₀)
 s = s₀ + ½(t - t₀)(v₀ + a(t - t₀))
 ```
 
-Aquí, \( t₀ \) representa el tiempo inicial, \( v₀ \) la velocidad inicial y \( s₀ \) la posición inicial del sistema. Estas expresiones permiten calcular la velocidad final y la posición final de un objeto en función del tiempo y la aceleración, y son ampliamente utilizadas tanto en simulaciones como en cálculos manuales.
+Aquí, $t₀$ representa el tiempo inicial, $v₀$ la velocidad inicial y $s₀$ la posición inicial del sistema. Estas expresiones permiten calcular la velocidad final y la posición final de un objeto en función del tiempo y la aceleración, y son ampliamente utilizadas tanto en simulaciones como en cálculos manuales.
 
----
-💡 ***EJEMPLO 1***
+💡**Ejemplo 1: Perfil de movimeinto**
 
 * Encuentre a posicion y la aceleraciòn en t= 5s, para esto tener en cuenta la figura 2.
 
-![Image](https://github.com/user-attachments/assets/33e490ef-ed86-473f-98a7-3875390ef21c)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/33e490ef-ed86-473f-98a7-3875390ef21c"  width="500">
+</p>
 
+<p align="center">
+ 
 ***Fig 2. Encontrar la posiciòn y aceleraciòn***
+</p>
 
-***SOLUCION***
+**Resultado**
 
-* La aceleración sería la pendiente de la velocidad como se muestra en la siguiente ecuacion:
+* La aceleración sería la pendiente de la velocidad como se muestra en la siguiente ecuación:
 
 ```
 a = 10/5
@@ -83,15 +86,20 @@ s = 25in/s
 ---
 
 ---
-💡***EJEMPLO 2***
+💡**Ejemplo 2: Perfil de movimeinto**
 
-* Un eje está viajando a una velocidad de 10 cm/s. En t=5 s empieza a disminuir la velocidad como se ve en el perfil. Cual es la posición del eje cuando se detiene? Asuma que empieza a desacelerar a 25 cm
+* Un eje está viajando a una velocidad de 10 cm/s. En t=5 s empieza a disminuir la velocidad como se ve en el perfil. ¿Cuál es la posición del eje cuando se detiene? Asuma que empieza a desacelerar a 25 cm
 
-![Image](https://github.com/user-attachments/assets/3bdf018d-65af-43e5-90c7-cfedbd7703bd)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3bdf018d-65af-43e5-90c7-cfedbd7703bd"  width="500">
+</p>
 
-***Fig 3. Encontrar la posiciòn y aceleraciòn***
+<p align="center">
+ ***Fig 3. Encontrar la posiciòn y aceleraciòn***
+</p>
 
-***SOLUCION***
+
+**Resultado**
 
 * La pendiente de la velocidad es la aceleración como se muestra en la siguiente ecuacion:
 
@@ -110,7 +118,7 @@ s = ½(15s-5s)*0.1m/s = 0.5m
   
 ---
 
-# 4. Tipos de Perfiles de Movimiento
+## 3. Tipos de Perfiles de Movimiento
 
 En la práctica, los sistemas mecatrónicos emplean diferentes tipos de perfiles de movimiento, dependiendo del tipo de tarea a ejecutar y del grado de suavidad o rapidez requerido. Entre los perfiles más comunes destacan el **perfil trapezoidal** y el **perfil en S**.
 
@@ -143,40 +151,8 @@ Tm = L/Vm - Ta = (10cm / 2cm/s) -2s = 3s
 
 ---
 
-
-## Perfil en S
-
-El perfil en S es una evolución del perfil trapezoidal, diseñado para minimizar los cambios bruscos en la aceleración, los cuales pueden generar vibraciones, esfuerzos mecánicos innecesarios o desgaste prematuro de componentes. Este perfil introduce transiciones suaves en la aceleración y la desaceleración mediante rampas progresivas, lo que da lugar a una curva con forma de "S" en la gráfica de velocidad.
-
-Este tipo de perfil puede representarse mediante funciones polinómicas, siendo una expresión común:
-
-```
-v(t) = C₁t² + C₂t + C₃
-```
-
-Donde los coeficientes \( C₁, C₂ \) y \( C₃ \) se determinan a partir de las condiciones iniciales y finales del sistema. El perfil en S es ideal para aplicaciones que requieren movimientos muy suaves, como sistemas de transporte automatizado, robots colaborativos o máquinas de alta precisión.
-
-# 5. Movimiento Multieje Coordinado
-
-En muchas aplicaciones modernas, los sistemas requieren desplazamientos que no pueden ser logrados con un solo eje en movimiento. Es aquí donde entra en juego el **movimiento multieje**, el cual consiste en la sincronización de dos o más ejes para ejecutar trayectorias complejas en el espacio tridimensional.
-
-## Tipos de Movimiento Multieje
-
-- **Movimiento Secuencial:** Cada eje realiza su desplazamiento de forma independiente y en un orden específico. Este tipo de movimiento es fácil de programar y controlar, aunque suele ser lento debido a la falta de simultaneidad.
-
-- **Movimiento Coordinado:** Varios ejes se mueven al mismo tiempo siguiendo una trayectoria conjunta. Este tipo de movimiento permite una mayor eficiencia, ya que reduce el tiempo de ejecución y mejora la fluidez del desplazamiento.
-
-- **Interpolación Multieje:** En este caso, el sistema calcula puntos intermedios a lo largo de una trayectoria deseada. Existen diferentes tipos de interpolación:
-  - **Lineal**, que sigue trayectorias rectas.
-  - **Circular**, usada en trayectorias curvadas.
-  - **Helicoidal**, que combina un movimiento circular con traslación.
-  - **Spline**, que utiliza curvas suaves polinómicas para trayectorias complejas.
-
-Este tipo de movimiento es ampliamente utilizado en maquinaria CNC, robots industriales, impresoras 3D y sistemas de automatización avanzada.
-
 # 6. Ejercicios
 
----
 ***Ejercicio 1***
 
 * Encuentre a posicion y la aceleraciòn en t= 6s
