@@ -3,31 +3,42 @@
 
 El modelado de mecanismos en Simscape es una herramienta poderosa dentro del entorno Matlab/Simulink que permite representar sistemas mecánicos de manera detallada, utilizando bloques que simulan componentes reales como cuerpos rígidos, articulaciones y resortes. A diferencia de otros enfoques, Simscape facilita la creación de modelos físicos complejos sin necesidad de escribir ecuaciones, ya que las convierte automáticamente en representaciones listas para simular. Esta herramienta no solo permite integrar el modelado mecánico con otros dominios físicos como el eléctrico o térmico, sino que también favorece la simulación de sistemas multidisciplinarios, lo que hace posible diseñar, analizar y optimizar mecanismos en un entorno virtual antes de su implementación física.
 
-## 1. Diseño de eslabones
+## 1. Fundamentos del Modelado de Mecanismos
 
 El diseño de eslabones en Simscape se realiza utilizando sólidos que representan los componentes de un mecanismo, como los eslabones de una cadena cinemática. Estos sólidos, que pueden ser cuerpos rígidos o estructuras más complejas, son modelados a través de bloques específicos que permiten definir sus propiedades físicas, como la masa, el momento de inercia y las fuerzas de contacto.
 
 >🔑 *Eslabones:* son elementos rígidos que transmiten fuerzas o movimientos dentro de un mecanismo.
 
+En el entorno de Simulink, los eslabones se modelan mediante el bloque Solid, el cual permite definir una amplia gama de propiedades que describen el comportamiento físico del cuerpo en el espacio tridimensional, como se muestra acontinuación: 
 
-https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/043e7227e44ce6cc18c1f69bec1b16df57b53888/Imagenes/Captura%20de%20pantalla%202025-04-11%20213930.jpg
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/043e7227e44ce6cc18c1f69bec1b16df57b53888/Imagenes/Captura%20de%20pantalla%202025-04-11%20213930.jpg"  width="500">
 
-Dentro del entorno de Simulink, los eslabones se modelan mediante el bloque `Solid`, el cual permite especificar parámetros físicos fundamentales como:
+Dentro del entorno de Simulink, el bloque de Solid permite especificar parámetros claves como:
 
-- Masa
-- Volumen
-- Centro de gravedad
-- Geometría
+- **Geometría:** Define la forma física del sólido. Puede seleccionarse entre geometrías básicas (cubo, cilindro, esfera, etc.) o importarse desde archivos CAD.
 
-La conectividad entre los cuerpos rígidos se logra mediante **juntas mecánicas** (*joints*), que definen la relación espacial entre ellos y los grados de libertad del sistema. Algunas de las juntas más comunes incluyen:
+- **Inercia:** Determina cómo responde el sólido ante rotaciones. Incluye masa, centro de masa, y tensor de inercia.
+
+- **Gráficos:** Permite personalizar la apariencia visual del sólido durante la simulación. Aunque no influye en el comportamiento dinámico, facilita el análisis visual del sistema.
+  
+- **Marcos de referencia:** Establecen los sistemas de coordenadas locales asociados al sólido. Son esenciales para posicionar el eslabón dentro del modelo y conectar correctamente.
+
+## 2. Cinemática y Dinámica de Mecanismos
+
+### 2.1 Cinemática de Mecanismos en Simscape
+
+> 🔑 *Cinemática:* Es la rama de la mecánica que estudia el movimiento de los cuerpos sin tener en cuenta las fuerzas que lo producen
+
+En el contexto de Simscape, la cinemática se implementa a través de la descripción del movimiento relativo entre los eslabones de un mecanismo conectado por juntas mecánicas (*joints*), que definen la relación espacial entre ellos y los grados de libertad del sistema.
+
+Simscape ofrece una variedad de bloques de juntas que se pueden utilizar para modelar diferentes tipos de movimientos en mecanismos, entre las juntas más comunes incluyen:
 
 - **Revolute Joint**: permite la rotación relativa entre dos sólidos alrededor de un eje fijo. Es comparable a una bisagra o a una articulación como el codo en un brazo robótico.
-
 
 <p align="center">
   <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/e2754edb612f0685ad4610b16332c6dec5f3499c/Imagenes/Captura%20de%20pantalla%202025-04-11%20213147.jpg"  width="300">
 </p>
-![image](https://github.com/user-attachments/assets/e701a845-b586-4226-b350-0fbb9ef036fe)
 
 ***Fig 1. Revolute Joing***
 
@@ -38,7 +49,13 @@ La conectividad entre los cuerpos rígidos se logra mediante **juntas mecánicas
 
 ***Fig 2. Prismatic Joing***
 
+- **Spherical Joint:** permite que un cuerpo se mueva libremente en tres grados de libertad (traslación y rotación) dentro de un espacio tridimensional
 
+- **Cylindrical Joint:** permite que un cuerpo se desplace a lo largo de un eje, pero también puede rotar alrededor de ese mismo eje.
+
+-
+
+  
 Además, se pueden integrar **actuadores** y **sensores** en el modelo para aplicar fuerzas, torques, o movimientos predefinidos, y para medir variables físicas como:
 
 - Ángulos de rotación
