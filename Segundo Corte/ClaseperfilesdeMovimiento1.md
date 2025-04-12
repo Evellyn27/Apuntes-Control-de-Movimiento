@@ -33,13 +33,9 @@ Cuando se tiene una función de aceleración en el tiempo, se puede calcular ind
 La interpretación gráfica de estos conceptos también es esencial: el **área bajo la curva de velocidad** en una gráfica representa el **desplazamiento total**; mientras que la **pendiente de la curva de velocidad** en un punto dado indica el valor de la **aceleración en ese instante**.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4bf5b949-b4a1-4dd7-a591-54e74619cd19"  width="500">
+  <img src="https://github.com/user-attachments/assets/4bf5b949-b4a1-4dd7-a591-54e74619cd19"  width="400">
 </p>
 
-<p align="center">
- 
-***Fig 1. Grafica posicion, velocidad y aceleración***
-</p>
 
 ## 2. Principios Geométricos y Ecuaciones de Movimiento
 
@@ -59,7 +55,7 @@ Aquí, $t₀$ representa el tiempo inicial, $v₀$ la velocidad inicial y $s₀$
 * Encuentre a posicion y la aceleraciòn en t= 5s, para esto tener en cuenta la figura 2.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/33e490ef-ed86-473f-98a7-3875390ef21c"  width="500">
+  <img src="https://github.com/user-attachments/assets/33e490ef-ed86-473f-98a7-3875390ef21c"  width="300">
 </p>
 
 <p align="center">
@@ -91,7 +87,7 @@ s = 25in/s
 * Un eje está viajando a una velocidad de 10 cm/s. En t=5 s empieza a disminuir la velocidad como se ve en el perfil. ¿Cuál es la posición del eje cuando se detiene? Asuma que empieza a desacelerar a 25 cm
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/3bdf018d-65af-43e5-90c7-cfedbd7703bd"  width="500">
+  <img src="https://github.com/user-attachments/assets/3bdf018d-65af-43e5-90c7-cfedbd7703bd"  width="300">
 </p>
 
 <p align="center">
@@ -119,6 +115,18 @@ s = ½(15s-5s)*0.1m/s = 0.5m
 ---
 
 ## 3. Tipos de Perfiles de Movimiento
+
+Existen diversos tipos de perfiles de movimiento, cada uno diseñado para cumplir con distintas exigencias de precisión, suavidad o rapidez en el desplazamiento. 
+
+### Comparación entre perfiles 
+| Tipo de Perfil              | Características Principales                                                                 | Aplicaciones Comunes                                         | Ventajas Principales                                      | Desventajas                                                   |
+|----------------------------|---------------------------------------------------------------------------------------------|---------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------|
+| **Trapezoidal**            | Movimiento con aceleración constante, velocidad constante y desaceleración simétrica        | CNC, transporte lineal, automatización industrial              | Fácil de calcular e implementar, buena eficiencia          | Transiciones bruscas en aceleración pueden generar impactos mecánicos |
+| **Curva en S (sigmoide)** | Transiciones suaves entre aceleración y velocidad, forma continua y redondeada               | Elevadores, robótica de precisión, sistemas con carga delicada | Minimiza vibraciones y choques, mayor suavidad            | Requiere mayor capacidad de procesamiento, cálculo más complejo |
+| **Aceleración constante**  | Movimiento dividido en tres fases: aceleración, velocidad constante y desaceleración       | Pick and place, sistemas de control básico                    | Implementación sencilla, buena para ciclos repetitivos     | Cambios bruscos en aceleración                               |
+| **Polinomial**             | Usa ecuaciones de tercer o quinto orden para suavizar el movimiento                         | Manipuladores robóticos, CNC, maquinaria de precisión         | Muy suave, continuo en posición, velocidad y aceleración   | Cálculo complejo, más demanda computacional                  |
+| **Sinusoidal**             | Velocidad y aceleración siguen funciones seno o coseno                                     | Sistemas sensibles a vibraciones: óptica, impresión 3D        | Suavidad extrema, excelente para precisión                 | Difícil alcanzar velocidad máxima, menos eficiente energéticamente |
+
 
 En la práctica, los sistemas mecatrónicos emplean diferentes tipos de perfiles de movimiento, dependiendo del tipo de tarea a ejecutar y del grado de suavidad o rapidez requerido. Entre los perfiles más comunes destacan el **perfil trapezoidal** y el **perfil en S**.
 
@@ -200,7 +208,7 @@ s = ½(9s-5s)*0.15m/s = 0.45m
   
 ---
 
-# 7. Conclusiones
+## Conclusiones
 
 El análisis y diseño de perfiles de movimiento representa una competencia clave dentro del campo de la ingeniería mecatrónica, ya que permite comprender cómo se desplazan, aceleran y detienen los sistemas automatizados en diversas condiciones. Más allá de una simple representación gráfica, los perfiles de movimiento constituyen herramientas esenciales para garantizar la seguridad operativa, la precisión funcional y la eficiencia energética de los mecanismos en movimiento.
 
@@ -210,9 +218,7 @@ Por otra parte, la simulación mediante herramientas como Simscape proporciona u
 
 Finalmente, este conocimiento no solo fortalece la formación académica, sino que habilita al estudiante para enfrentar retos del mundo real, desde la programación de trayectorias en robots industriales hasta el desarrollo de sistemas de automatización de alta precisión. Comprender y dominar los perfiles de movimiento es, en esencia, dar un paso firme hacia la innovación tecnológica con base en principios científicos y herramientas digitales de vanguardia.
 
-# 8. Referencias
-
-### Referencias
+## Referencias
 
 1. Groover, M. P. (2016). *Automation, Production Systems, and Computer-Integrated Manufacturing* (4th ed.). Pearson Education.  
    [ISBN: 9780133499612]
