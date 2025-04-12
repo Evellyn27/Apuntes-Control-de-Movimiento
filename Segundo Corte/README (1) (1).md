@@ -37,24 +37,34 @@ Simscape ofrece una variedad de bloques de juntas que se pueden utilizar para mo
 - **Revolute Joint**: permite la rotación relativa entre dos sólidos alrededor de un eje fijo. Es comparable a una bisagra o a una articulación como el codo en un brazo robótico.
 
 <p align="center">
-  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/e2754edb612f0685ad4610b16332c6dec5f3499c/Imagenes/Captura%20de%20pantalla%202025-04-11%20213147.jpg"  width="300">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/e2754edb612f0685ad4610b16332c6dec5f3499c/Imagenes/Captura%20de%20pantalla%202025-04-11%20213147.jpg"  width="200">
 </p>
-
-***Fig 1. Revolute Joing***
 
 
 - **Prismatic Joint**: restringe el movimiento a una sola dimensión lineal. Es similar al comportamiento de un pistón o actuador lineal.
 
-![image](https://github.com/user-attachments/assets/271a360b-e82a-4d06-ae96-bbde94dd4e32)
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/1222695aa5fdf1b41f498a92b106e4c39930765e/Imagenes/Captura%20de%20pantalla%202025-04-11%20230057.jpg"  width="200">
+</p>
 
-***Fig 2. Prismatic Joing***
 
 - **Spherical Joint:** permite que un cuerpo se mueva libremente en tres grados de libertad (traslación y rotación) dentro de un espacio tridimensional
 
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/1222695aa5fdf1b41f498a92b106e4c39930765e/Imagenes/Captura%20de%20pantalla%202025-04-11%20230125.jpg"  width="200">
+</p>
+
 - **Cylindrical Joint:** permite que un cuerpo se desplace a lo largo de un eje, pero también puede rotar alrededor de ese mismo eje.
 
--
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/1222695aa5fdf1b41f498a92b106e4c39930765e/Imagenes/Captura%20de%20pantalla%202025-04-11%20230110.jpg"  width="200">
+</p>
 
+- **Pin-Slot Joint:** permite que un cuerpo se desplace a lo largo de una ranura (movimiento lineal) y, al mismo tiempo, pueda rotar alrededor de un eje dentro de esa trayectori
+
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/cff4f7c6455840c971953cc960d77861d5102050/Captura%20de%20pantalla%202025-04-11%20230138.jpg"  width="200">
+</p>
   
 Además, se pueden integrar **actuadores** y **sensores** en el modelo para aplicar fuerzas, torques, o movimientos predefinidos, y para medir variables físicas como:
 
