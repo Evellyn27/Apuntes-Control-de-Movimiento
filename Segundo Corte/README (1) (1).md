@@ -1,9 +1,16 @@
 
-# Diseño de Eslabones con Simulink y Simscape Multibody
+#  Modelado de Mecanismos en Simscape
 
-## 1) Diseño de eslabones
+El modelado de mecanismos en Simscape es una herramienta poderosa dentro del entorno Matlab/Simulink que permite representar sistemas mecánicos de manera detallada, utilizando bloques que simulan componentes reales como cuerpos rígidos, articulaciones y resortes. A diferencia de otros enfoques, Simscape facilita la creación de modelos físicos complejos sin necesidad de escribir ecuaciones, ya que las convierte automáticamente en representaciones listas para simular. Esta herramienta no solo permite integrar el modelado mecánico con otros dominios físicos como el eléctrico o térmico, sino que también favorece la simulación de sistemas multidisciplinarios, lo que hace posible diseñar, analizar y optimizar mecanismos en un entorno virtual antes de su implementación física.
 
-El diseño de eslabones en entornos de simulación como **Simulink**, utilizando el complemento **Simscape Multibody**, constituye una herramienta clave para representar y analizar el comportamiento de sistemas mecánicos complejos. En este contexto, los *eslabones* son elementos rígidos que transmiten fuerzas o movimientos dentro de un mecanismo. Se utilizan en una amplia variedad de aplicaciones, desde brazos robóticos hasta sistemas de suspensión automotriz o mecanismos de transmisión como la biela-manivela.
+## 1. Diseño de eslabones
+
+El diseño de eslabones en Simscape se realiza utilizando sólidos que representan los componentes de un mecanismo, como los eslabones de una cadena cinemática. Estos sólidos, que pueden ser cuerpos rígidos o estructuras más complejas, son modelados a través de bloques específicos que permiten definir sus propiedades físicas, como la masa, el momento de inercia y las fuerzas de contacto.
+
+>🔑 *Eslabones:* son elementos rígidos que transmiten fuerzas o movimientos dentro de un mecanismo.
+
+
+https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/043e7227e44ce6cc18c1f69bec1b16df57b53888/Imagenes/Captura%20de%20pantalla%202025-04-11%20213930.jpg
 
 Dentro del entorno de Simulink, los eslabones se modelan mediante el bloque `Solid`, el cual permite especificar parámetros físicos fundamentales como:
 
@@ -14,15 +21,18 @@ Dentro del entorno de Simulink, los eslabones se modelan mediante el bloque `Sol
 
 La conectividad entre los cuerpos rígidos se logra mediante **juntas mecánicas** (*joints*), que definen la relación espacial entre ellos y los grados de libertad del sistema. Algunas de las juntas más comunes incluyen:
 
-- 🔧 **Revolute Joint**: permite la rotación relativa entre dos sólidos alrededor de un eje fijo. Es comparable a una bisagra o a una articulación como el codo en un brazo robótico.
+- **Revolute Joint**: permite la rotación relativa entre dos sólidos alrededor de un eje fijo. Es comparable a una bisagra o a una articulación como el codo en un brazo robótico.
 
 
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/e2754edb612f0685ad4610b16332c6dec5f3499c/Imagenes/Captura%20de%20pantalla%202025-04-11%20213147.jpg"  width="300">
+</p>
 ![image](https://github.com/user-attachments/assets/e701a845-b586-4226-b350-0fbb9ef036fe)
 
 ***Fig 1. Revolute Joing***
 
 
-- 🔧 **Prismatic Joint**: restringe el movimiento a una sola dimensión lineal. Es similar al comportamiento de un pistón o actuador lineal.
+- **Prismatic Joint**: restringe el movimiento a una sola dimensión lineal. Es similar al comportamiento de un pistón o actuador lineal.
 
 ![image](https://github.com/user-attachments/assets/271a360b-e82a-4d06-ae96-bbde94dd4e32)
 
