@@ -7,7 +7,7 @@ El diseño de transmisión tiene como objetivo transferir potencia y movimiento 
 
 Para lograrlo, se aplican principios de la cinemática, dinámica y resistencia de materiales, con el fin de construir un sistema robusto, confiable y de larga duración.
 
----
+
 
 ## 2. Requisitos de Diseño
 
@@ -24,7 +24,7 @@ A continuación, se presentan diferentes situaciones que pueden surgir en el dis
 | Motor existente y se busca un movimiento | Calcular la transmisión requerida |
 | Transmisión existente y se busca un movimiento | Seleccionar motor adecuado |
 
----
+
 
 ## 3. Inercia y Torque
 
@@ -48,7 +48,7 @@ $T_r = \frac{T_L}{N}$
 
 Esto permite adaptar el sistema para reducir el esfuerzo del motor o ajustar el comportamiento dinámico.
 
----
+
 
 ## 4. Engranajes
 
@@ -64,7 +64,7 @@ Donde \( Z \) representa el número de dientes y \( D \) el diámetro de cada en
 - Si \( N < 1 \), se incrementa la velocidad y se reduce el torque.
 - Si \( N = 1 \), no hay cambios en torque ni velocidad.
 
----
+
 
 ## 5. Eficiencia
 
@@ -76,7 +76,7 @@ Un sistema eficiente es aquel que logra el movimiento deseado con el menor consu
 - Diseñar trayectorias suaves con perfiles de aceleración adecuados.
 - Incluir sensores de alta resolución para retroalimentación precisa.
 
----
+
 
 ## 6. Inercia Total
 
@@ -88,7 +88,7 @@ $J_{total} = J_{motor} + J_{transmision} + J_{carga\_reflejada}$
 
 Esto influye directamente en la aceleración, la estabilidad del sistema y la elección del motor.
 
----
+
 
 ## 7. Relación de Inercia
 
@@ -103,7 +103,7 @@ La relación de inercia entre la carga reflejada y el motor es clave para el ren
 
 Se busca mantener esta relación dentro de un rango adecuado para lograr un equilibrio entre respuesta y consumo.
 
----
+
 
 ## 8. Poleas y Correas
 
@@ -165,7 +165,6 @@ $T_{motor} = \frac{T_{carga}}{i \cdot n}$
 
 Donde \( n \) es la eficiencia del sistema.
 
----
 
 ## Sensores
 
@@ -173,9 +172,6 @@ Los sensores son elementos fundamentales en cualquier sistema de control de movi
 
 Gracias a la retroalimentación que ofrecen, se puede ajustar el comportamiento del sistema en tiempo real, mejorando la precisión, eficiencia y seguridad.
 
----
-
----
 
 ### 📚 Ejercicio 1: Cálculo de inercia reflejada
 
@@ -239,7 +235,7 @@ $J_{\text{trans ref}} \approx 8.1 \, \text{kg·m}^2$
 \]
 
 
----
+
 
 ### 📚 Ejercicio 2: Cálculo de Relación de Inercia
 
@@ -260,7 +256,7 @@ Se desea calcular la **relación de inercia \( J_R \)**, que relaciona la inerci
 - \( $J_m = 1.5 \times 10^{-5} \, \text{kg·m}^2$ \)
 - \( $J_{\text{GB-M}} = 0.15 \times 10^{-4} \, \text{kg·m}^2$ \)
 
----
+
 
 ### Cálculos
 
@@ -280,7 +276,7 @@ $J_R = \frac{J_m + J_{\text{load→M}} + J_{\text{GB-M}}}{J_m}$
 = 3.75
 \]
 
----
+
 
 ### Resultado
 
@@ -291,7 +287,7 @@ La **relación de inercia total \( J_R \)** del sistema es:
 \]
 
 Esto indica que la inercia total reflejada al eje del motor es 3.75 veces mayor que la inercia propia del rotor del motor.
----
+
 
 ## Conclusiones
 
