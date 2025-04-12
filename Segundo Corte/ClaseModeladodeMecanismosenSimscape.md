@@ -65,31 +65,72 @@ Simscape ofrece una variedad de bloques de juntas que se pueden utilizar para mo
 <p align="center">
   <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/cff4f7c6455840c971953cc960d77861d5102050/Captura%20de%20pantalla%202025-04-11%20230138.jpg"  width="200">
 </p>
-  
-Además, se pueden integrar **actuadores** y **sensores** en el modelo para aplicar fuerzas, torques, o movimientos predefinidos, y para medir variables físicas como:
 
-- Ángulos de rotación
-- Velocidades angulares
-- Posiciones lineales
+### 2.2  Dinámica de los Mecanismos
 
-Una herramienta fundamental en la interacción entre el entorno físico y el matemático de Simulink es el bloque `PS Converter`, que permite transformar señales convencionales (como senoidales o impulsos) en señales físicas aceptadas por Simscape. Esto facilita, por ejemplo:
+> 🔑 *Dinámica:* estudia las fuerzas que actúan sobre los eslabones y cómo estas afectan el movimiento del sistema. 
 
-- Prescribir entradas dinámicas a las juntas
-- Aplicar torques variables
-- Controlar movimientos con señales generadas por algoritmos o controladores
+En Simscape, se configuran propiedades dinámicas utilizando el bloque Solid y sus parámetros de masa, momento de inercia, y fuerzas de contacto.
 
-![image](https://github.com/user-attachments/assets/80382fda-dda3-4192-943d-244b9882a5ac)
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/5535d42e88dd950cc25ddf5b4cedcef0e850fd85/Imagenes/Captura%20de%20pantalla%202025-04-11%20232425.jpg"  width="500">
+</p>
 
-***Fig 3. PS Converter***
+### 2.3 Actuadores y Sensado en Simscape
+Simscape permite controlar el comportamiento dinámico de un mecanismo mediante el uso de actuadores y obtener información clave del sistema a través de sensores integrados en cada articulación.
+
+#### Actuation (Actuación)
+El apartado Actuation define cómo se aplican las entradas al sistema. En el caso mostrado:
+
+- **Torque:** Se puede configurar como None, Automatically Computed, Provided by Input, etc.
+
+Cuando se selecciona None, no se aplica ningún par directamente. Sin embargo, si se elige Provided by Input, se habilita una entrada física por la cual se puede aplicar un torque externo al sistema, por ejemplo, desde un bloque Stair Generator conectado mediante un PS Converter.
+
+- **Motion:** Determina si el movimiento es calculado por el modelo (como resultado de las fuerzas aplicadas), o si es prescrito manualmente.
+
+En la opción Automatically Computed, el sistema resuelve el movimiento según las condiciones físicas, pero también se puede fijarse a un perfil definido por el usuario (e.g., velocidad o posición deseada).
+
+#### Sensing (Sensado)
+Este bloque permite seleccionar qué variables del sistema se desean monitorear. Las opciones incluyen:
+
+- **Position**: Mide la posición angular o lineal relativa entre los dos cuerpos conectados por la junta.
+- **Velocity**: Mide la velocidad de cambio de posición.
+- **Acceleration**: Permite obtener la segunda derivada, útil para el análisis dinámico.
+- **Actuator Torque**: Mide el par aplicado por un actuador.
+- **Lower-Limit Torque / Upper-Limit Torque**: Detectan cuándo el sistema está alcanzando los límites de movimiento impuestos por la configuración de la junta.
+
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/ee9ada9d8955f5cb8642a4675e5c35bf33d01cb2/Imagenes/Captura%20de%20pantalla%202025-04-11%20233600.jpg"  width="500">
+</p>
+
+### 2.4 Aplicación de Entradas 
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/eac0de6430c7708504ab7a4f3e50abe2c154af45/Imagenes/Captura%20de%20pantalla%202025-04-11%20234004.jpg"  width="500">
+</p>
+
+En Simscape, aplicar entradas al sistema mecánico requiere transformar señales generadas desde el entorno de Simulink (como funciones escalón, senoidales o algoritmos de control) a señales físicas que puedan interactuar con el modelo. Para esto, se utiliza el bloque PS Converter.
+
+El PS Converter es una herramienta clave que permite convertir señales no físicas en señales físicas, adecuadas para interactuar con el entorno Simscape. Este bloque es esencial para:
+
+- Prescribir entradas dinámicas a las juntas (por ejemplo, ángulos deseados o posiciones lineales).
+- Aplicar torques o fuerzas variables en función del tiempo o de un controlador.
+- Controlar trayectorias mecánicas generadas por algoritmos de control.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/80382fda-dda3-4192-943d-244b9882a5ac"  width="200">
+</p>
+
+<p align="center">
+  <img src="https://github.com/Evellyn27/Apuntes-Control-de-Movimiento/blob/a310790f3533d968b1ec3d9987005e1361085a2a/Imagenes/Captura%20de%20pantalla%202025-04-11%20234623.jpg"  width="300">
+</p>
+
+
 
 ---
 
-## 2) Ejemplo
 
-💡***Ejemplo 1***
-A continuación, se presentará un ejemplo de simulación mecánica que ilustra el comportamiento dinámico de un cubo en movimiento. Este modelo tiene como objetivo aplicar los conceptos y componentes previamente descritos, tales como eslabones rígidos, juntas y señales físicas dentro del entorno de Simulink con Simscape Multibody.
-
-En particular, el sistema simulado representa un movimiento oscilatorio vertical del cubo, caracterizado por un desplazamiento alternante de subida y bajada a lo largo de un único eje (movimiento traslacional unidimensional). Este comportamiento se implementa mediante una Prismatic Joint, la cual restringe el movimiento del cuerpo rígido a un solo grado de libertad lineal.
+💡**Ejemplo: Movimiento oscilatorio vertical del cubo**
+A continuación, se simula un movimiento oscilatorio vertical del cubo, caracterizado por un desplazamiento alternante de subida y bajada a lo largo de un único eje (movimiento traslacional unidimensional). Este comportamiento se implementa mediante una Prismatic Joint, la cual restringe el movimiento del cuerpo rígido a un solo grado de libertad lineal.
 
 La trayectoria oscilatoria del cubo se prescribe a través de una señal física senoidal, convertida desde el entorno de Simulink mediante un bloque PS Converter, lo que permite generar un movimiento de ida y vuelta continuo con frecuencia y amplitud definidas.
 
