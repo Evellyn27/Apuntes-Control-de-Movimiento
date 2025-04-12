@@ -1,4 +1,6 @@
-# APUNTES SEMANA 7
+# Fundamentos y Perfiles de Movimiento Trapezoidales
+
+Los perfiles de movimiento son esenciales en el control de sistemas mecánicos y robóticos, ya que permiten definir cómo se debe desplazar un actuador o mecanismo a lo largo del tiempo, optimizando la posición, velocidad y aceleración de forma coordinada para lograr movimientos más suaves, precisos y eficientes. Entre los diferentes tipos de perfiles, el trapezoidal es uno de los más utilizados debido a su estructura simple y a su capacidad para alcanzar rápidamente una velocidad constante, mantenerla por un tiempo determinado y luego desacelerar de manera controlada, lo que lo hace ideal para aplicaciones donde se requiere un posicionamiento rápido sin comprometer la estabilidad del sistema.
 
 # 1. Definición de Movimiento de Perfil
 
