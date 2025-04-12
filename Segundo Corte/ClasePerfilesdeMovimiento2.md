@@ -54,13 +54,6 @@ El experimento realizado por Performance Motion Devices evaluó cómo los perfil
 
 Las gráficas muestran que el perfil trapezoidal genera oscilaciones debido a cambios bruscos en la aceleración, lo que prolonga el tiempo de estabilización, mientras que el perfil con curva S distribuye mejor la aceleración, reduciendo vibraciones y demostrando que es más eficiente para movimientos precisos y controlados.
 
-### Tipos de curvas en S
-
-- **Curva en S Estandar:** 
-- **Curva en S Estandar:**
-
-
-
 ## Modelo Matemático del Perfil de Movimiento en S
 
 El modelo matemático de la curva en S se basa en un polinomio de segundo orden que define el perfil de velocidad, permitiendo una transición suave en la aceleración y evitando cambios bruscos en el movimiento.
@@ -126,7 +119,6 @@ Así, los coeficientes quedan definidos como:
 - $C_2 = 0$
 - $C_3 = 0$
 
-💡**Ejemplo: Análisis Curva S de 3 segmentos**
 
 ## Métodos de Coordinación de Movimiento Multieje
 
