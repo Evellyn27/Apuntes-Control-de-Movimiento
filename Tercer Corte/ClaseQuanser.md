@@ -1,10 +1,10 @@
-# COMO HACER USO DE LOS GEMELOS DIGITALES (QUANSER)
+# Gemelos Digitales en Quanser
 
 ![image](https://github.com/user-attachments/assets/01916511-5fb9-4e7f-bc56-84fca18238f4)
 
 🔹 *Figura 1: Quanser.* 
 
-Los gemelos digitales son representaciones virtuales de sistemas físicos que permiten simular y analizar su comportamiento en un entorno controlado.  
+Los gemelos digitales representan una evolución crucial en la manera de gestionar y optimizar sistemas físicos, al crear una réplica virtual que refleja con precisión el comportamiento real de máquinas, procesos o entornos. Esta conexión entre el mundo digital y el físico permite no solo monitorear en tiempo real, sino también simular escenarios futuros, anticipar fallos y tomar decisiones más inteligentes que mejoran la eficiencia y reducen costos. Sin embargo, lograr una implementación efectiva de estos modelos requiere herramientas sofisticadas y entornos de prueba confiables. En este contexto, Quanser se destaca como un referente al ofrecer plataformas de hardware y software diseñadas para desarrollar y validar gemelos digitales, especialmente en educación e investigación, facilitando así el aprendizaje práctico y la innovación en control, automatización y robótica
 
 # 1) Definiciones
 
